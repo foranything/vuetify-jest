@@ -2,16 +2,23 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
-    '^vue$': 'vue/dist/vue.common.js'
+    '^vuetify/lib$': 'vuetify'
   },
-  moduleFileExtensions: ['js', 'vue', 'json'],
+  moduleFileExtensions: ['ts', 'js', 'vue', 'json'],
   transform: {
-    '^.+\\.js$': 'babel-jest',
+    '^.+\\.(t|j)s?$': 'ts-jest',
     '.*\\.(vue)$': 'vue-jest'
   },
-  'collectCoverage': true,
-  'collectCoverageFrom': [
+  transformIgnorePatterns: ['node_modules/(?!(vuetify)/)'],
+  collectCoverage: true,
+  collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue'
-  ]
+  ],
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
+  globals: {
+    'ts-jest': {
+      diagnostics: false
+    }
+  }
 }

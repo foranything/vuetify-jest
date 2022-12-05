@@ -31,7 +31,7 @@
     "file-saver": "^2.0.2",
     "fusioncharts": "^3.14.1",
     "jwt-decode": "^2.2.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "numeral": "^2.0.6",
     "nuxt": "^2.10.2",
